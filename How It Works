@@ -1,0 +1,4 @@
+The user provides a dataset, either as a file or by generating random data..csv
+The dataset is normalized to fit within a 2D canvas.
+The program applies mathematical transformations to the data (e.g., sine waves, grids, or polar plots) to create the artistic visualization.
+The final artwork is saved as an image.
