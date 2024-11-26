@@ -1,0 +1,15 @@
+Transform Data Into Art:
+Load any dataset (e.g., .csv, .json) and convert it into artistic visualizations.
+Customizable Styles:
+Choose different artistic styles such as waveforms, grid patterns, or abstract scatter art.
+Interactive Visualizations:
+Customize the output interactively using sliders and options (via ipywidgets).
+Export as Images:
+Save the generated artwork in .png format for sharing or printing.
+
+Technologies Used
+Python Libraries:
+pandas: For handling datasets.
+numpy: For mathematical transformations.
+matplotlib: For visualizing data in creative ways.
+Pillow: For image manipulation and saving.
