@@ -1,0 +1,37 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+
+def generate_waveform_art(data, filename="waveform_art.png"):
+    """
+    Generate a waveform-style artwork from a dataset.
+
+    Args:
+        data (pd.DataFrame): The dataset to use.
+        filename (str): The name of the file to save the artwork.
+    """
+    # Normalize data
+    normalized_data = (data - data.min()) / (data.max() - data.min())
+    
+    # Generate coordinates for the wave
+    x = np.linspace(0, len(data), len(data))
+    y = normalized_data.values.flatten()  # Flatten to a 1D array
+    
+    # Create the plot
+    plt.figure(figsize=(12, 6), facecolor="black")
+    plt.plot(x, y, color="cyan", linewidth=2, alpha=0.8)
+    plt.fill_between(x, y, color="cyan", alpha=0.3)
+    plt.axis("off")  # Hide axes for a clean look
+    plt.title("Waveform Art", color="white", fontsize=18)
+    
+    # Save the plot as an image
+    plt.savefig(filename, dpi=300, bbox_inches="tight", pad_inches=0, facecolor="black")
+    plt.close()
+
+    print(f"Artwork saved as {filename}")
+
+# Example Usage
+# Generate random data for testing
+data = pd.DataFrame(np.random.rand(100, 1), columns=["Value"])
+generate_waveform_art(data)
